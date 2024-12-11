@@ -300,6 +300,8 @@ func f (func(int, int) int, int) func (int, int) int { /* ... */ }
 sum := func (a,b int) int { return a+b };
 ```
 
+#### Multiple returns
+
 A function can return any number of results.
 The swap function returns two string
 
@@ -313,6 +315,25 @@ func main() {
  fmt.Println(a, b)
 }
 ```
+
+#### Named return values
+
+Go's return values may be named. If so, they are treated as variables defined at the top of the function.
+These names should be used to document the meaning of the return values.
+A **return statement without arguments** returns the named return values. This is known as a `naked` return.
+
+The var statement declares a list of variables; as in function argument lists, the type is last.
+
+### Variables
+
+> [!NOTE]
+> The var statement declares a list of variables; as in function argument lists, the type is last.
+> A var statement can be at package or function level.
+
+### Variables with initializers
+
+A var declaration can include initializers, one per variable.
+
 
 ### Pointers
 
