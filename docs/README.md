@@ -420,9 +420,50 @@ func sayHello(message *string) string {
     *message = "Hello, " + *message
 }
 
-func main(){
+func main(){**
     message = "Amir"
     sayHello(&message)
     fmt.Println(message)
+}
+```
+
+### Structures
+
+A structure or struct is a `user-defined` type that allows users to group/combine items of different type into a single type. Any real world entity which
+has some set of properties or fields can be represented as a **struct**. This concept is generally compared with `classes` in **Object Oriented Programming (OOP)**.
+It can be termed as a lightweight class that does not support inheritance but supports composition.
+For Example, an address has a name, street, city, state, Pincode.
+It makes sense to group these three properties into a single structure address as shown below:
+
+```go
+type Address struct {
+    name string
+    street string
+    city string
+    city string
+    Pincode int
+}
+```
+
+**Usage**:
+
+> [!NOTE]
+> Struct fields are accessed using a dot.
+
+```go
+package main
+import "fmt"
+
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    v := Vertex{1, 2}
+    v.X = 4
+    fmt.Println(v.X, v.Y)
+    // Output: 4 2
 }
 ```
