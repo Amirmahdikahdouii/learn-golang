@@ -510,4 +510,20 @@ func main() {
 
 ### Arrays
 
-TODO: write doc for Arrays.
+The type `[n]T` is an array of `n` values of type `T`.
+
+**Example:**
+
+```go
+var a [10]int
+```
+
+This example declare a variable `a` as an array of ten integers.
+An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.
+
+### Slices
+
+An array has a fixed size. A slice, on the other hand, is a dynamically-sized, flexible view into the elements of an array.
+In practice, **slices** are much more common than arrays.
+
+The type `[]T` is a **slice** with elements of type `T`.
