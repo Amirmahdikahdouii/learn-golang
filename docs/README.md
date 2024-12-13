@@ -334,7 +334,6 @@ The var statement declares a list of variables; as in function argument lists, t
 
 A var declaration can include initializers, one per variable.
 
-
 ### Pointers
 
 Note that **values are stored in memory**.
@@ -467,3 +466,48 @@ func main() {
     // Output: 4 2
 }
 ```
+
+#### Pointers to structs
+
+Struct fields can be accessed through a struct pointer.
+
+To access the field `X` of a struct when we have the struct pointer `p` we could write `(*p).X`
+
+However this notation is cumbersome, so the language permits us instead to write just `p.X`, without the explicit dereference.
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    v := Vertex{1, 2}
+    p := &v
+    p.X = 4
+    fmt.Println(v)
+    // Output: {4, 2}
+}
+```
+
+> [!NOTE]
+> You can specifically define value for a field or subset of fields from struct using `Name: Value` syntax
+
+```go
+type Vertex struct {
+    X, Y int
+}
+
+func main() {
+    var v1 = Vertex{X: 1} // Y will define 0
+    var v2 = Vertex{X: 1, Y:4}
+}
+```
+
+### Arrays
+
+TODO: write doc for Arrays.
